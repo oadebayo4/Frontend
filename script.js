@@ -1,6 +1,6 @@
 //we are going to make an event listener.. it will trigger with the DOM is loaded (aka upon visiting webpage)
 addEventListener("DOMContentLoaded", async function(){
-    const response = await fetch("http://localhost:3000/api/songs")
+    const response = await fetch("https://glitch.com/edit/#!/irradiated-endurable-jade")
     const songs = await response.json()
 
     let html = ''
@@ -9,4 +9,5 @@ addEventListener("DOMContentLoaded", async function(){
     }
 
     document.querySelector("#addedsong"). innerHTML = html
+
 })
