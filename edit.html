@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Front End</title>
+    <script src="scripts/edit.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/index.html">All Songs</a>
+        <a href="/add_song.html">Add Songs</a>
+    </nav>
+    <form>
+        <p>
+            <label for="songid">ID:</label>
+            <input type="text" id="songid">
+        </p>
+        <p>
+           <label for="title">Title:</label>
+           <input type="text" id="title">
+        </p>
+        <p>
+           <label for="artist">Artist:</label>
+           <input type="text" id="artist">
+        </p>
+        <p>
+           <label for="released">Released:</label>
+           <input type="date" id="released">
+        </p>
+        <p>
+           <label for="popularity">Popularity:</label>
+           <input type="number" min="1" max="10" 
+              id="popularity">
+        </p>
+        <p>
+           <label for="genre">Genre:</label>
+           <input type="text" id="genre">
+        </p>
+        <p>
+           <input type="button" id="addBtn" value="Update Song">
+        </p>
+        <p id="error"></p>
+     </form>
+    
+</body>
+</html>
