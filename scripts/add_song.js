@@ -12,11 +12,12 @@ addEventListener("DOMContentLoaded", function() {
        releaseDate: document.querySelector("#released").value,
        popularity: document.querySelector("#popularity").value,
        genre: document.querySelector("#genre").value? 
-       document.querySelector("#genre").value.split(",") : []
+       document.querySelector("#genre").value.split(",") : [],
+       username : localStorage.getItem("uname")
     };
  
     // POST a JSON-encoded song to Music API
-    const response = await fetch("http://localhost:3000/api/songs"  + {
+    const response = await fetch("http://localhost:3000/api/songs",{
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(song)
