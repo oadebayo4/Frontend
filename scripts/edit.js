@@ -2,7 +2,7 @@ addEventListener("DOMContentLoaded", async function() {
     document.querySelector("#updateBtn").addEventListener("click", updateSong);
     const urlparam = new URLSearchParams(window.location.search)
     const songID = urlparam.get('id')
-    const response = await fetch("http://localhost:3000/api/songs/" + songID)
+    const response =  await fetch("http://localhost:3000/api/songs/" + songID)
     if(response.ok){
         let song = await response.json()
         document.querySelector("#songId").value = song._id
@@ -16,6 +16,7 @@ addEventListener("DOMContentLoaded", async function() {
 
  async function updateSong() {
     // Create a song object from the form fields
+    const songID = document.querySelector("#songId").value
     const song = {
        _id: document.querySelector("#songId").value,
        title: document.querySelector("#title").value,
@@ -27,14 +28,14 @@ addEventListener("DOMContentLoaded", async function() {
     };
          
      // Send PUT request with JSON-encoded song to Music API
-    const response = await fetch("http://localhost:3000/api/songs/" + songID, {
+    const response = await fetch("http://localhost:3000/api/songs" + songID,{
        method: "PUT",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(song)
     });
  
     if (response.ok) {      
-       alert("Updated song.");
+       alert("Updated song")
     }
     else {
        document.querySelector("#error").innerHTML = "Cannot update song.";
